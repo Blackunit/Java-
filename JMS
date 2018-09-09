@@ -1,6 +1,20 @@
 1.1 What Is Messaging?(什么是消息通讯？)
-Messaging is a method of communication between software components or applications. A messaging system is a peer-to-peer facility: A messaging client can send messages to, and receive messages from, any other client. Each client connects to a messaging agent that provides facilities for creating, sending, receiving, and reading messages.
+Messaging is a method of communication between software components or applications. A messaging system is a peer-to-peer facility: A messaging client can send messages to, and receive messages from, any other client. Each client connects to a messaging agent that provides facilities for creating, sending, receiving, and reading messages.（消息通讯是软件组件或应用之间通讯的一种方式。一个通讯系统是一个对等（peer-to-peer区别server/client）的设施：一个通讯客户端可发送消息给任何其他客户端或接受来自任何其他客户端的消息。每个客户端是连接到一个提供创建、发送、接受和读取消息工具（facilities）的通讯代理（agent）。）
 
 Messaging enables distributed communication that is loosely coupled. A component sends a message to a destination, and the recipient can retrieve the message from the destination. What makes the communication loosely coupled is that the destination is all that the sender and receiver have in common. The sender and the receiver do not have to be available at the same time in order to communicate. In fact, the sender does not need to know anything about the receiver; nor does the receiver need to know anything about the sender. The sender and the receiver need to know only which message format and which destination to use. In this respect, messaging differs from tightly coupled technologies, such as Remote Method Invocation (RMI), which require an application to know a remote application's methods.
-
+（Messaging 实现了松耦合的分布式通讯。一个组件将消息发送到一个目的地，然后消息接受者可从此目的地获取（retrieve）此消息。使通讯成为松耦合的是目的地是发送者和接受者共有的唯一东西。为了通讯两者不必同时可用（available）。事实上，发送者不必知晓接受者的任何东西；接受者也一样。两者只需知道所使用的消息格式和目的地。在这方面，messaging 不同于紧耦合技术，如需应用了解远程应用方法的远程方法调用（RMI）。）
 Messaging also differs from electronic mail (email), which is a method of communication between people or between software applications and people. Messaging is used for communication between software applications or software components.
+（Messaging 也不同于电子邮件（email），一种人与人之间或软件应用之间通讯的方式。Messaging 用于软件应用或软件组件之间的通讯。）
+1.2  What Is the JMS API?（什么是JMS API）
+The Java Message Service is a Java API that allows applications to create, send, receive, and read messages. The JMS API defines a common set of interfaces and associated semantics that allow programs written in the Java programming language to communicate with other messaging implementations.
+（Java 消息服务是可让应用创建、发送、接受和读取消息的一个Java API。JMS API 定义了一套接口和相关的语义，可让Java程序与其他通讯应用实现通讯。）
+
+The JMS API minimizes the set of concepts a programmer must learn in order to use messaging products but provides enough features to support sophisticated messaging applications. It also strives to maximize the portability of JMS applications across JMS providers.
+（JMS API jia）
+JMS enables communication that is not only loosely coupled but also
+
+Asynchronous: A receiving client does not have to receive messages at the same time the sending client sends them. The sending client can send them and go on to other tasks; the receiving client can receive them much later.
+
+Reliable: A messaging provider that implements the JMS API can ensure that a message is delivered once and only once. Lower levels of reliability are available for applications that can afford to miss messages or to receive duplicate messages.
+
+The current version of the JMS specification is Version 2.0. You can download a copy of the specification from the Java Community Process website: http://www.jcp.org/en/jsr/detail?id=343.
